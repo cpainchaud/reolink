@@ -125,7 +125,8 @@ class Api:  # pylint: disable=too-many-instance-attributes disable=too-many-publ
             self._aiohttp_session = None
         else:
             self._aiohttp_session: aiohttp.ClientSession = aiohttp.ClientSession(timeout=self._timeout,
-                                                                    connector=aiohttp.TCPConnector(ssl=False))
+                                                                    connector=aiohttp.TCPConnector(ssl=False),
+                                                                    connector_owner=False)
             self._aiohttp_get_session_callback = None
 
 
